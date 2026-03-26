@@ -53,7 +53,7 @@ Connect your Petra Wallet and start chatting — every message is a transaction 
 
 ---
 
-## 📸 Screenshots
+## 📸 Picture
 
 <div align="center">
   <img src="ShelbyChat.png" width="80%" />
@@ -77,23 +77,14 @@ npm install
 vercel dev
 
 # Or just open index.html in browser
-
-```
-
-## 🔧 Environment Variables
-
-```
+🔧 Environment Variables
 Create .env file (for local development) or set in Vercel:
 
 Variable	Description
 GROQ_API_KEY	Groq API key for AI responses
 HF_API_KEY	Hugging Face API key (fallback)
-
----
-
-## 📁 Project Structure
-
-```
+📁 Project Structure
+text
 shelbychat/
 ├── api/
 │   ├── balance.js      # ShelbyUSD balance from chain
@@ -106,38 +97,19 @@ shelbychat/
 ├── vercel.json         # Vercel config
 ├── package.json
 └── README.md
-
----
-
-## 🧠 How It Works
-
----
-<div align="center"> <table> <tr> <td width="25%" align="center"><strong>1️⃣ Connect Wallet</strong><br />Petra Wallet → Address detected</td> <td width="25%" align="center"><strong>2️⃣ Type Message</strong><br />Gas fee modal appears</td> <td width="25%" align="center"><strong>3️⃣ Confirm Transaction</strong><br />Send to Shelby blockchain</td> <td width="25%" align="center"><strong>4️⃣ AI Responds</strong><br />Groq/Hugging Face reply</td> </tr> </table> </div>
-
----
-
-## 🔗 Related Links
-
----
+🧠 How It Works
+<div align="center"> 表 <tr> <td width="25%" align="center"><strong>1️⃣ Connect Wallet</strong><br />Petra Wallet → Address detected</td> <td width="25%" align="center"><strong>2️⃣ Type Message</strong><br />Gas fee modal appears</td> <td width="25%" align="center"><strong>3️⃣ Confirm Transaction</strong><br />Send to Shelby blockchain</td> <td width="25%" align="center"><strong>4️⃣ AI Responds</strong><br />Groq/Hugging Face reply</td> </tr> </table> </div>
+🔗 Related Links
 Resource	Link
 🌐 Shelby Testnet	docs.shelby.xyz
 🧾 Shelby Explorer	explorer.shelby.xyz
 💎 Petra Wallet	petra.app
 🧠 Groq API	console.groq.com
 📊 CoinGecko	coingecko.com
-
----
-
-## 📝 License
-
----
+📝 License
 This project is licensed under the MIT License — feel free to use, modify, and distribute.
 
----
-
-## 🌟 Show Your Support
-
----
+🌟 Show Your Support
 If you like this project, give it a ⭐ on GitHub!
 
 <div align="center"> <sub>Built with 💗 by <a href="https://github.com/gunduul">gunduul</a> • Powered by Aptos & Shelby</sub> </div> ```
