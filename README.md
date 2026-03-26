@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/guunduul/shelbychat/main/logo.png" width="120" />
+  <img src="https://raw.githubusercontent.com/aptos-labs/aptos-core/main/ecosystem/assets/aptos-wordmark.png" width="120" />
   <h1>🌸 ShelbyChat</h1>
   <p><strong>AI Chat on Shelby Testnet</strong><br />Every message confirmed on-chain with gas fee • Powered by Aptos</p>
   <p>
