@@ -777,7 +777,7 @@
       <span class="footer-sep">·</span>
       <a href="https://discord.gg/Mtv9eJKH" target="_blank" class="footer-link">Discord</a>
       <span class="footer-sep">·</span>
-      <a href="https://github.com/guunduul" target="_blank" class="footer-link">GitHub</a>
+      <a href="https://github.com/guunduul/shelbychat" target="_blank" class="footer-link">GitHub</a>
     </div>
   </div>
 </main>
@@ -1451,16 +1451,24 @@ function addUserMsg(text, attachments) {
   const list = document.getElementById('historyList');
   const ph = list.querySelector('[style*="text-dim"]');
   if (ph) ph.remove();
+  
   const short = text.length > 34 ? text.slice(0, 34) + '…' : text;
   const sessionId = Date.now().toString();
+  
+  // Batasi maksimal 15 session
+  const sessionCount = Object.keys(sessions).length;
+  if (sessionCount >= 15) {
+    const oldestId = Object.keys(sessions).sort()[0];
+    delete sessions[oldestId];
+  }
+  
   sessions[sessionId] = { 
     title: short, 
     messagesHtml: '', 
     chatHistory: [],
     msgCount: 1
   };
-
-  // Save ke localStorage
+  
   saveChatHistory();
   renderHistoryList();
   return sessionId;
@@ -1469,14 +1477,21 @@ function addUserMsg(text, attachments) {
   if (!currentSessionId) return;
   if (sessions[currentSessionId]) {
     sessions[currentSessionId].msgCount = (sessions[currentSessionId].msgCount || 1) + 1;
-    sessions[currentSessionId].messagesHtml = document.getElementById('messages').innerHTML;
-    sessions[currentSessionId].chatHistory = [...chatHistory];
     
-    // Update count di UI
+    // Batasi HTML yang disimpan (maks 30rb karakter)
+    const messagesHtml = document.getElementById('messages').innerHTML;
+    if (messagesHtml.length < 30000) {
+      sessions[currentSessionId].messagesHtml = messagesHtml;
+    } else {
+      sessions[currentSessionId].messagesHtml = '<div>History truncated due to size</div>';
+    }
+    
+    // Batasi chat history per session (maks 30 pesan)
+    sessions[currentSessionId].chatHistory = [...chatHistory].slice(-30);
+    
     const el = document.getElementById('msgcount_' + currentSessionId);
     if (el) el.textContent = sessions[currentSessionId].msgCount;
     
-    // Save ke localStorage
     saveChatHistory();
   }
 }
@@ -1499,15 +1514,80 @@ function newChat() {
 }
 // ========== SAVE & LOAD CHAT HISTORY ==========
 function saveChatHistory() {
-  const historyData = {
-    sessions: sessions,
-    currentSessionId: currentSessionId,
-    chatHistory: chatHistory,
-    msgCount: msgCount
-  };
-  localStorage.setItem('shelbychat_history', JSON.stringify(historyData));
+  try {
+    // Batasi jumlah session (maks 15)
+    const sessionIds = Object.keys(sessions).sort((a, b) => parseInt(b) - parseInt(a));
+    if (sessionIds.length > 15) {
+      const toRemove = sessionIds.slice(15);
+      toRemove.forEach(id => delete sessions[id]);
+    }
+    
+    // Batasi chat history global (maks 200 pesan)
+    if (chatHistory.length > 200) {
+      chatHistory = chatHistory.slice(-200);
+    }
+    
+    // Buat data ringan untuk disimpan
+    const historyData = {
+      sessions: {},
+      currentSessionId: currentSessionId,
+      chatHistory: chatHistory,
+      msgCount: msgCount
+    };
+    
+    // Simpan session dengan data ringan
+    for (const [id, session] of Object.entries(sessions)) {
+      historyData.sessions[id] = {
+        title: session.title?.slice(0, 50) || 'Untitled',
+        messagesHtml: session.messagesHtml?.slice(0, 30000) || '',
+        chatHistory: session.chatHistory?.slice(-30) || [],
+        msgCount: session.msgCount || 1
+      };
+    }
+    
+    localStorage.setItem('shelbychat_history', JSON.stringify(historyData));
+  } catch (e) {
+    if (e.name === 'QuotaExceededError') {
+      console.warn('Storage full, cleaning...');
+      cleanStorage();
+    }
+  }
 }
-
+function cleanStorage() {
+  // Force clean: hanya simpan 5 session terbaru
+  const sessionIds = Object.keys(sessions).sort((a, b) => parseInt(b) - parseInt(a));
+  const toKeep = sessionIds.slice(0, 5);
+  const newSessions = {};
+  toKeep.forEach(id => {
+    newSessions[id] = {
+      title: sessions[id].title,
+      messagesHtml: '',
+      chatHistory: [],
+      msgCount: sessions[id].msgCount
+    };
+  });
+  
+  Object.keys(sessions).forEach(k => delete sessions[k]);
+  Object.assign(sessions, newSessions);
+  
+  chatHistory = [];
+  currentSessionId = null;
+  
+  try {
+    localStorage.setItem('shelbychat_history', JSON.stringify({
+      sessions: newSessions,
+      currentSessionId: null,
+      chatHistory: [],
+      msgCount: 0
+    }));
+  } catch (e) {
+    localStorage.removeItem('shelbychat_history');
+  }
+  
+  renderHistoryList();
+  newChat();
+  showToast('⚠️ Storage cleaned, old history removed');
+}
 function loadChatHistory() {
   const saved = localStorage.getItem('shelbychat_history');
   if (!saved) return false;
