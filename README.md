@@ -1,46 +1,82 @@
+# 🌸 ShelbyChat
+
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=32&duration=2500&color=00F7FF&center=true&vCenter=true&width=800&lines=ShelbyChat+⚡;On-Chain+AI+Chat;Web3+Messaging+Revolution;Built+on+Aptos" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=32&duration=2500&color=FF4DAA&center=true&vCenter=true&width=800&lines=ShelbyChat+⚡;On-Chain+AI+Chat;Web3+Messaging+Revolution;Powered+by+Aptos" />
 
 <br/>
 
+<img src="https://img.shields.io/badge/SHELBYCHAT-FF4DAA?style=for-the-badge&logo=chat&logoColor=white"/>
 <img src="https://img.shields.io/badge/STATUS-LIVE-00ffcc?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/CHAIN-APTOS-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/AI-GROQ%20%2F%20HF-purple?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/CHAIN-APTOS-black?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/LICENSE-MIT-pink?style=for-the-badge"/>
 
 <br/><br/>
 
-<h2>⚡ ShelbyChat — Fully On-Chain AI Chat</h2>
-<p>Every message is a transaction. Real Web3 messaging.</p>
+<h2>⚡ AI Chat Fully On-Chain</h2>
+<p>Every message is a transaction on Shelby Testnet</p>
+
+<p>
+<a href="https://shelbychat.vercel.app/"><img src="https://img.shields.io/badge/🚀_LIVE_APP-FF4DAA?style=for-the-badge"/></a>
+<a href="https://github.com/gunduul/shelbychat"><img src="https://img.shields.io/github/stars/gunduul/shelbychat?style=for-the-badge&color=gold"/></a>
+</p>
 
 </div>
 
 ---
 
-# 🚀 OVERVIEW
+# 🚀 LIVE DEMO
 
-ShelbyChat adalah aplikasi AI Chat berbasis blockchain dimana:
-- Setiap chat = transaksi on-chain
-- Menggunakan wallet (Petra)
-- Terintegrasi AI (Groq / HuggingFace)
-- Bisa dilihat langsung di explorer
+👉 https://shelbychat.vercel.app/
+
+Connect wallet → Chat → Transaction → Done ⚡
 
 ---
 
-# 🔥 FEATURES (ULTRA MODE)
+# ✨ FEATURES
 
-- ⚡ On-Chain Messaging
-- 🤖 AI Response (Realtime)
-- 🔗 Explorer Tracking
-- ⛽ Gas Fee System
-- 👛 Wallet Login (Petra)
-- 💾 Persistent Chat History
-- 🌐 Fully Decentralized Ready
+| Feature | Description |
+|--------|------------|
+| 🤖 AI Chat | Groq (Llama 3) + HuggingFace |
+| ⛽ Gas System | 0.0025 SHELBY_USD per message |
+| 🔗 Explorer | Track every transaction |
+| 👛 Wallet | Petra Wallet integration |
+| 💾 Storage | localStorage persistence |
+| ⚡ Realtime | Fast AI response |
 
 ---
 
-# 📦 INSTALL (ALL-IN-ONE)
+# 🌐 NETWORK CONFIG
+
+```bash
+Network   : Shelby Testnet
+
+RPC       : https://api.shelbynet.shelby.xyz/shelby
+Fullnode  : https://api.shelbynet.shelby.xyz/v1
+Indexer   : https://indexer.shelby.xyz
+Explorer  : https://explorer.shelby.xyz/shelbynet
+Faucet    : https://faucet.shelbynet.shelby.xyz
+```
+
+---
+
+# 💧 GET TESTNET TOKEN
+
+### 🔹 APT (Gas Fee)
+👉 https://docs.shelby.xyz/apis/faucet/aptos
+
+### 🔹 ShelbyUSD (Chat Fee)
+👉 https://docs.shelby.xyz/apis/faucet/shelbyusd
+
+### ⚡ Steps:
+1. Open faucet link
+2. Connect Petra Wallet
+3. Claim token
+4. Use for chat gas
+
+---
+
+# 📦 INSTALL (FULL)
 
 ```bash
 git clone https://github.com/gunduul/shelbychat.git
@@ -57,75 +93,62 @@ vercel dev
 
 ---
 
-# 🌐 NETWORK CONFIG (IMPORTANT)
+# 📁 PROJECT STRUCTURE
 
 ```bash
-NETWORK   = Shelby Testnet
-
-RPC       = https://api.shelbynet.shelby.xyz/shelby
-FULLNODE  = https://api.shelbynet.shelby.xyz/v1
-INDEXER   = https://indexer.shelby.xyz
-EXPLORER  = https://explorer.shelby.xyz
-FAUCET    = https://faucet.shelbynet.shelby.xyz
+shelbychat/
+├── api/
+│   ├── balance.js
+│   ├── chat.js
+│   ├── prices.js
+│   └── view.js
+├── public/
+│   └── favicon.ico
+├── index.html
+├── vercel.json
+├── package.json
+└── README.md
 ```
-
----
-
-# 💸 HOW TO GET GAS (FAUCET)
-
-1. Buka:
-👉 https://faucet.shelbynet.shelby.xyz
-
-2. Connect wallet (Petra)
-
-3. Claim token testnet
-
-4. Gunakan untuk kirim chat (gas fee)
-
----
-
-# 🔗 IMPORTANT LINKS
-
-- 🌍 App        : https://shelbychat.vercel.app/
-- 🔎 Explorer   : https://explorer.shelby.xyz
-- 💧 Faucet     : https://faucet.shelbynet.shelby.xyz
-- 📡 RPC        : https://api.shelbynet.shelby.xyz
 
 ---
 
 # 🧠 SYSTEM FLOW
 
 ```text
-User → Connect Wallet
-     → Input Message
-     → Pay Gas Fee
-     → Send Transaction
-     → AI Process
-     → Response Returned
-     → Stored On-Chain
+Connect Wallet
+      ↓
+Input Message
+      ↓
+Pay Gas Fee
+      ↓
+Send Transaction
+      ↓
+AI Processing
+      ↓
+Response Returned
+      ↓
+Stored On-Chain
 ```
 
 ---
 
-# 📁 PROJECT STRUCTURE
+# 🔗 IMPORTANT LINKS
 
-```bash
-shelbychat/
-├── api/           # backend logic
-├── public/        # assets
-├── index.html     # main UI
-├── vercel.json    # deployment config
-├── package.json   # dependencies
-└── .env           # environment
-```
+| Resource | Link |
+|----------|------|
+| 🌐 App | https://shelbychat.vercel.app/ |
+| 🔎 Explorer | https://explorer.shelby.xyz |
+| 💧 Faucet | https://faucet.shelbynet.shelby.xyz |
+| 📡 Docs | https://docs.shelby.xyz |
+| 👛 Wallet | https://petra.app |
 
 ---
 
 # ⚠️ NOTES
 
-- Wajib punya balance testnet
-- Tanpa gas = chat gagal ❌
-- Semua activity bisa dilihat di explorer
+- Harus punya balance testnet
+- Tanpa gas = transaksi gagal ❌
+- Semua chat = on-chain activity
 
 ---
 
@@ -139,7 +162,11 @@ vercel deploy
 
 <div align="center">
 
-<h2>🚀 ULTRA WEB3 MODE ACTIVATED</h2>
-<p>Build the future. Not Web2.</p>
+<h2>🌌 COSMIC MODE ACTIVATED</h2>
+<p>Not Web2. Not Web3. This is ON-CHAIN AI.</p>
+
+<br/>
+
+⭐ Star repo kalau suka ya bro!
 
 </div>
