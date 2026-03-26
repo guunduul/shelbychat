@@ -141,8 +141,10 @@ Stored On-Chain
 | Resource | URL |
 |----------|-----|
 | 🌐 Live App | https://shelbychat.vercel.app/ |
-| 🔎 Explorer | https://explorer.shelby.xyz/shelbynet) | https://explorer.aptoslabs.com/?network=shelbynet |
-| 💧 Faucet   | https://docs.shelby.xyz/apis/faucet/shelbyusd | https://docs.shelby.xyz/apis/faucet/aptos |
+| 🔎 Explorer | https://explorer.shelby.xyz/shelbynet |
+|             | https://explorer.aptoslabs.com/?network=shelbynet |
+| 💧 Faucet   | https://docs.shelby.xyz/apis/faucet/shelbyusd | 
+|              | https://docs.shelby.xyz/apis/faucet/aptos |
 | 📡 Docs     | https://docs.shelby.xyz |
 | 👛 Petra Wallet | https://petra.app |
 
