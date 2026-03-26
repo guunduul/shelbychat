@@ -142,9 +142,7 @@ Stored On-Chain
 |----------|-----|
 | 🌐 Live App | https://shelbychat.vercel.app/ |
 | 🔎 Explorer | https://explorer.shelby.xyz/shelbynet |
-|             | https://explorer.aptoslabs.com/?network=shelbynet |
-| 💧 Faucet   | https://docs.shelby.xyz/apis/faucet/shelbyusd | 
-|              | https://docs.shelby.xyz/apis/faucet/aptos |
+| 💧 Faucet   | https://docs.shelby.xyz/apis/faucet/shelbyusd |
 | 📡 Docs     | https://docs.shelby.xyz |
 | 👛 Petra Wallet | https://petra.app |
 
