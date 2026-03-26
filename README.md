@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/aptos-labs/aptos-core/main/ecosystem/assets/aptos-wordmark.png" width="120" />
+  <img src="https://img.shields.io/badge/SHELBYCHAT-FF4DAA?style=for-the-badge&logo=chat&logoColor=white" width="200" />
   <h1>🌸 ShelbyChat</h1>
   <p><strong>AI Chat on Shelby Testnet</strong><br />Every message confirmed on-chain with gas fee • Powered by Aptos</p>
   <p>
     <a href="https://shelbychat.vercel.app/"><img src="https://img.shields.io/badge/demo-live-ff4daa?style=for-the-badge&logo=vercel&logoColor=white" /></a>
-    <a href="https://github.com/guunduul/shelbychat"><img src="https://img.shields.io/github/stars/guunduul/shelbychat?style=for-the-badge&logo=github&color=gold" /></a>
-    <a href="https://github.com/guunduul/shelbychat/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-pink?style=for-the-badge" /></a>
+    <a href="https://github.com/gunduul/shelbychat"><img src="https://img.shields.io/github/stars/gunduul/shelbychat?style=for-the-badge&logo=github&color=gold" /></a>
+    <a href="https://github.com/gunduul/shelbychat/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-pink?style=for-the-badge" /></a>
   </p>
 </div>
 
@@ -53,11 +53,21 @@ Connect your Petra Wallet and start chatting — every message is a transaction 
 
 ---
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="ShelbyChat.png" width="80%" />
+  <br />
+  <em>ShelbyChat — AI Chat on Shelby Testnet</em>
+</div>
+
+---
+
 ## 📦 Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/guunduul/shelbychat.git
+git clone https://github.com/gunduul/shelbychat.git
 cd shelbychat
 
 # Install dependencies (if any)
@@ -67,15 +77,23 @@ npm install
 vercel dev
 
 # Or just open index.html in browser
-🔧 Environment Variables
+
+```
+
+## 🔧 Environment Variables
+
+```
 Create .env file (for local development) or set in Vercel:
 
 Variable	Description
 GROQ_API_KEY	Groq API key for AI responses
 HF_API_KEY	Hugging Face API key (fallback)
 
-📁 Project Structure
-text
+---
+
+## 📁 Project Structure
+
+```
 shelbychat/
 ├── api/
 │   ├── balance.js      # ShelbyUSD balance from chain
@@ -89,18 +107,18 @@ shelbychat/
 ├── package.json
 └── README.md
 
-🧠 How It Works
-User connects Petra Wallet → Address detected
+---
 
-User types message → Gas fee modal appears
+## 🧠 How It Works
 
-User confirms → Transaction sent to Shelby blockchain (register_blob)
+---
+<div align="center"> <table> <tr> <td width="25%" align="center"><strong>1️⃣ Connect Wallet</strong><br />Petra Wallet → Address detected</td> <td width="25%" align="center"><strong>2️⃣ Type Message</strong><br />Gas fee modal appears</td> <td width="25%" align="center"><strong>3️⃣ Confirm Transaction</strong><br />Send to Shelby blockchain</td> <td width="25%" align="center"><strong>4️⃣ AI Responds</strong><br />Groq/Hugging Face reply</td> </tr> </table> </div>
 
-Transaction recorded → Hash appears in chat + Explorer link
+---
 
-AI responds → Groq / Hugging Face generates smart reply
+## 🔗 Related Links
 
-🔗 Related Links
+---
 Resource	Link
 🌐 Shelby Testnet	docs.shelby.xyz
 🧾 Shelby Explorer	explorer.shelby.xyz
@@ -108,10 +126,18 @@ Resource	Link
 🧠 Groq API	console.groq.com
 📊 CoinGecko	coingecko.com
 
-📝 License
+---
+
+## 📝 License
+
+---
 This project is licensed under the MIT License — feel free to use, modify, and distribute.
 
-🌟 Show Your Support
+---
+
+## 🌟 Show Your Support
+
+---
 If you like this project, give it a ⭐ on GitHub!
 
-<div align="center"> <sub>Built with 💗 by <a href="https://github.com/guunduul">guunduul</a> • Powered by Aptos & Shelby</sub> </div> ```
+<div align="center"> <sub>Built with 💗 by <a href="https://github.com/gunduul">gunduul</a> • Powered by Aptos & Shelby</sub> </div> ```
