@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="ShelbyChat.png" width="80%" />
 
 <br/>
 
